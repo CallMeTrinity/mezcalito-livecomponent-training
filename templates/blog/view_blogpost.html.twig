@@ -1,0 +1,27 @@
+<div class="max-w-4xl mx-auto my-8 p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+    <!-- Titre du blogpost -->
+    <h1 class="text-3xl font-bold text-gray-900 mb-4">
+        {{ blogpost.title }}
+    </h1>
+
+    <!-- Contenu du blogpost -->
+    <p class="text-gray-700 text-base whitespace-pre-line mb-6">
+        {{ blogpost.content }}
+    </p>
+
+    <!-- Meta informations -->
+    <div class="text-gray-600 text-sm mb-4">
+        <span>Publié le {{ blogpost.date|date("d/m/Y") }}</span>
+    </div>
+
+    <!-- Boutons d'action -->
+    <div class="flex justify-between items-center">
+        <a href="/edit/{{ blogpost.id }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition-colors duration-200">
+            Modifier
+        </a>
+        <a href="/blog" class="inline-block bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded transition-colors duration-200">
+            Retour à la liste
+        </a>
+    </div>
+</div>
+

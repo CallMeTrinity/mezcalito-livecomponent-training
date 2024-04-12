@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block content %}
+
+    {% include 'blog/view_blogpost.html.twig' %}
+
+
+    <turbo-frame id="comment_form">
+        {{ component('comment_form', {'blogId': blogpost.id, 'form': form}) }}
+    </turbo-frame>
+    <turbo-frame id="all_comments">
+        {{ component('all_comments', {'id': blogpost.id}) }}
+    </turbo-frame>
+
+
+{% endblock %}

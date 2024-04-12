@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    {{ component('image_form', {'imageForm': imageForm}) }}
+    <div class="flex justify-center">
+
+        {{ component('image') }}
+    </div>
+
+
+{% endblock content %}

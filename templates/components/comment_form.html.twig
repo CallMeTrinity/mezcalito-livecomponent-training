@@ -1,0 +1,16 @@
+{# templates/components/comment_form.html.twig #}
+
+<div class="max-w-md mx-auto">
+
+    {{ form_start(form) }}
+    {{ form_row(form.pseudo) }}
+    {{ form_row(form.content) }}
+
+    <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+    >
+        Post comment
+    </button>
+    {{ form_end(form) }}
+</div>

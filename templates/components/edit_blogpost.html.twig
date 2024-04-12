@@ -1,0 +1,51 @@
+<div {{ attributes }} class="max-w-4xl mx-auto p-5 bg-white shadow-md rounded-lg">
+
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">{{ blogpost.title }}</h1>
+
+    <hr class="mb-4">
+
+    <div class="mb-4">
+        <label for="blogpost_title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
+        <input
+                type="text"
+                data-model="blogpost.title"
+                data-action="blur->live#update"
+                value="{{ blogpost.title }}"
+                id="blogpost_title"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        >
+    </div>
+    <div class="mb-6">
+        <label for="blogpost_content" class="block text-gray-700 text-sm font-bold mb-2">Content</label>
+        <textarea
+                data-model="blogpost.content"
+                id="blogpost_content"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        >{{ blogpost.content }}</textarea>
+    </div>
+
+    <div class="preview mb-6">
+        <h3 class="text-xl font-semibold mb-2">{{ blogpost.title }}</h3>
+        <p class="text-gray-600">{{ blogpost.content }}</p>
+    </div>
+
+    <div>
+        <button
+                data-action="live#action"
+                data-action-name="save"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >Enregistrer les modifications
+        </button>
+        <a
+                href="/postView/{{ blogpost.id }}"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >view
+        </a>
+    </div>
+
+    {% if isSaved %}
+        <div class="mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            Enregistré !
+        </div>
+    {% endif %}
+</div>
